@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+* {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+:root {
+    /* Colors */
+    --cC-primary: hsl(246, 80%, 60%);
+
+    --cA-work: hsl(15, 100%, 70%);
+    --cA-play: hsl(195, 74%, 62%);
+    --cA-study: hsl(348, 100%, 68%);
+    --cA-exercise: hsl(145, 58%, 55%);
+    --cA-social: hsl(264, 64%, 52%);
+    --cA-selfCare: hsl(43, 84%, 65%);
+
+    --cN-00: hsl(226, 43%, 10%);
+    --cN-10: hsl(235, 46%, 20%);
+    --cN-20: hsl(235, 45%, 61%);
+    --cN-30: hsl(236, 100%, 87%);
+}
+
+
+
+body {
+    display: flex;
+    justify-content: center;
+    background: var(--cN-00);
+}
+
+main {
+    margin: 20px;
+    width: 330px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.user-card {
+    width: 100%;
+    height: 200px;
+    border-radius: 20px;
+    background: var(--cN-10);
+}
+header {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 30px;
+    border-radius: inherit;
+    background: var(--cC-primary);
+}
+.avatar {
+    width: 70px;
+    height: 70px;
+    border: 3px solid white;
+    border-radius: 100%;
+}
+ul {
+    margin: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+
+.card {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 160px;
+    border-radius: 20px;
+}
+
+
+
+.card article {
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    bottom: 0;
+    height: 120px;
+    width: 100%;
+    padding: 30px;
+    border-radius: 20px;
+    background: var(--cN-10);
+}
+.work {background: var(--cA-work);}
+.play {background: var(--cA-play);}
+.study {background: var(--cA-study);}
+.exercise {background: var(--cA-exercise);}
+.social {background: var(--cA-social);}
+.selfcare {background: var(--cA-selfCare);}
+.card-icon {
+    top: -10px;
+    right: 10px;
+    position: absolute;
+}
+
+
+
+.card-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu-dots {width: 25px; height: 6px;}
+.menu-dots:hover {
+    cursor: pointer;
+    filter: brightness(200%);
+}
+
+
+.card-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/*  TYPOGRAPHY  */
+html {font-size: 100%;} /*16px*/
+body {color: white;}
+h2 {
+    font-weight: 500;
+    font-size: 1rem;
+}
+h1 {
+    font-weight: 300;
+    font-size: 1.6rem;
+}
+h3 {
+    font-weight: 300;
+    color: var(--cN-40);
+    font-size: 1.75rem;    
+}
+p {
+    font-weight: 400;
+    color: var(--cN-30);
+    font-size: 1rem;
+}
+li {
+    font-weight: 400;
+    color: var(--cN-30);
+    font-size: 1.2rem;
+} li:hover {color: var(--cN-40); cursor: pointer;}
+
+.active {color: var(--cN-40);}
+/*////////////////////////////////////////////////////////////*/
+
+
+
+@media (min-width: 840px) {
+    h1 {font-size: 2.6rem;}
+    h3 {font-size: 3.6rem;}
+
+    main {
+        display: grid;
+        grid-gap: 20px;
+        height: auto;
+    }
+
+    .user-card {
+        display: flex;
+        flex-direction: column;
+        grid-row: span 2;
+        grid-column: 1;
+        height: 500px;
+    }
+
+    header {
+        height: 350px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+    } .avatar {width: 80px; height: 80px;}
+    ul {
+        flex-direction: column;
+        margin: 30px 30px;
+        flex: 1 1 auto;
+    }
+
+    .card {
+        height: 100%;
+    }
+    .card article {
+        height: 80%;
+        justify-content: space-between;
+    }
+    .card-body {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+
+@media (min-width: 1200px) {
+    main {
+        grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+        width: 1100px;
+    }
+}
+
+
+
+@media (min-width: 840px) and (max-width: 1200px) {
+    main {
+        grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+        width: 820px;
+    }
+
+    .social {
+        grid-column: 2;
+    }
+}
